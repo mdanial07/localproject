@@ -1,0 +1,138 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 15px;
+    align-items: center;
+    background-color: #0768c9;
+    color: #fff;
+    .Avator{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img{
+            width: 60px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+        }
+        .detail{
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            cursor: pointer;
+            span{
+                font-weight: bold;
+                font-size: 17px;
+            }
+        }
+    }
+    .Icon{
+        i{
+            padding: 0 10px;
+            font-size: 26px;   
+            color: #fff;         
+        }
+    }
+}
+
+::ng-deep .mat-tab-labels{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .mat-tab-label{
+        width: 100%;
+        border: 1px solid #cdcdcd;
+    }
+}
+
+.AllCards{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 68px;
+    .Card{
+        margin: 10px 0;
+        background-color: #fff;
+        box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.19);
+        .Header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            color: #000;
+            .Avator{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                img{
+                    width: 60px;
+                }
+                .detail{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 15px;
+                    span{
+                        font-weight: bold;
+                        font-size: 17px;
+                    }
+                }
+            }
+            .TimeandPinSection{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                color: #d1d1d1;
+                .DateTime{
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 13px;
+                    padding: 0 10px;
+                    font-weight: bold;
+                }
+                i{
+                    padding: 0 10px;
+                    font-size: 26px;            
+                }
+                .VerticalLine{
+                    background-color: #d1d1d1;
+                    width: 1.5px;
+                    height: 50px;
+                    margin: 0 8px;
+                }
+            }
+        }
+        .Post{
+            padding: 10px 20px;
+            font-size: 22px;    
+        }
+        .CommentSection{
+            padding: 0 10px 20px;
+            .LikeShare{
+                color: #0768c9;
+                padding: 10px 15px;
+                font-weight: bold;
+                font-size: 13px;
+            }
+            .commentInput{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0 10px;
+                .field{
+                    border: 1px solid #818181;
+                    padding: 5px 10px;
+                    border-radius: 25px;
+                    width: 100%;
+                    input{
+                        width: 100%;
+                        border: none;
+                    }
+                }
+                i{
+                    padding: 0 20px;
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}

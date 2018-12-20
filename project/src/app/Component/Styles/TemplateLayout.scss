@@ -1,0 +1,38 @@
+.FooterTabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #1c71bf;
+    background-color: #fff;
+    border-top: 2px solid #818181;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    height: 70px;
+    .NavItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px 0px;
+        height: 80px;
+        margin-top: -14px;
+        width: 20%;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        i{
+            font-size: 22px;
+        }
+    }
+    .NavItem:hover{
+        background-color: #0d73d8;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.active {
+    background-color: #0d73d8;
+    color: #fff;    
+}

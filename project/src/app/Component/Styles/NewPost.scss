@@ -1,0 +1,117 @@
+.MainHeader {
+  background-color: #0768c9;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 15px;
+
+  span {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  i {
+    padding: 0 20px;
+    font-size: 24px;
+  }
+}
+
+.Card {
+  margin: 10px 0;
+  background-color: #fff;  
+  .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+
+    .Avator {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        width: 60px;
+      }
+
+      .detail {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        color: #000;
+
+        span {
+          font-weight: bold;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .TimeandPinSection {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #d1d1d1;
+
+      i {
+        padding: 0 10px;
+        font-size: 26px;
+      }
+      .VerticalLine {
+        background-color: #d1d1d1;
+        width: 1.5px;
+        height: 50px;
+        margin: 0 8px;
+      }
+    }
+  }
+  hr {
+    margin: 0 !important;
+  }
+  .Post {
+    padding: 10px 20px;
+    font-size: 22px;
+    height: 75vh;
+    .field {
+      padding: 5px 10px;
+      width: 100%;
+
+      textarea {
+        width: 100%;
+        border: none;
+      }
+    }
+  }
+}
+
+.PostMessage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #cdcdcd;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background-color: #fff;
+    .Icons{
+        i{
+            color: #737373;
+            font-size: 24px;
+            padding: 5px 10px 5px 25px;
+        }
+    }
+    .Button {
+        margin: 10px 25px;
+        display: flex;
+        button {
+            background-color: #0768c9;
+            color: #fff;
+            padding: 2px 23px;
+            font-size: 18px;
+        }
+    }
+}

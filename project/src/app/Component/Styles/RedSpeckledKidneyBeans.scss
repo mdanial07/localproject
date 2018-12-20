@@ -1,0 +1,130 @@
+.MainHeader {
+    background-color: #0768c9;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span {
+      font-size: 22px;
+    }
+    i {
+      padding: 0 20px;
+      font-size: 24px;
+    }
+}
+.RKSBS{
+    margin-bottom: 80px;
+    .Top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 8px 18px;
+        .rskb{
+            display: flex;
+            flex-direction: column;
+            .Heading{
+                font-size: 32px;
+                font-weight: bold;
+                margin: 0;
+            }
+            span{
+                font-size: 12px;
+                margin-top: -5px;
+                margin-top: 2;
+            }
+        }
+        .flag{
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            padding: 10px 0;
+            img{
+                width: 25px;
+                height: 22px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .LocalInternational{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 0;
+        .LocalInter{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .name{
+                font-weight: bold;
+                font-size: 13px;
+            }
+            h2{
+                margin: 0;
+                font-weight: bold;
+            }
+            .positive{
+                color: green;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .negative{
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+    .Graph{
+        padding: 15px;
+        div{
+            width: 100%;
+            height: 175px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3447c0;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+    .Pricing{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10% 10px 10px;
+        h5{
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .Items{
+            display: flex;
+            flex-direction: row;
+            .ItemLeft{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                span{
+                    padding: 10px; 
+                    display: flex;
+                    flex-direction: row;
+                    width: 175%;                    
+                }
+            }
+            .ItemRight{
+                display: flex;
+                flex-direction: column;
+                margin-left: 45%;
+                width: 100%;
+                span{
+                    padding: 10px; 
+                    display: flex;
+                    flex-direction: row;
+                    width: 120%;                   
+                }
+            }
+        }
+    }
+}

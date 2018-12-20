@@ -1,0 +1,26 @@
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+<div class="FooterTabs">
+    <div class="NavItem" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <i class="fa fa-home"></i>
+        <span>Home</span>
+    </div>
+    <div class="NavItem" routerLink="/manifest" routerLinkActive="active">
+        <i class="fa fa-cog"></i>
+        <span>Manifest</span>
+    </div>
+    <div class="NavItem" routerLink="/redspeckledkidneybeans" routerLinkActive="active">
+        <i class="fa fa-code-branch"></i>
+        <span>Feed</span>
+    </div>
+    <div class="NavItem" routerLink="/grainbazar" routerLinkActive="active">
+        <i class="fa fa-clipboard-list"></i>
+        <span>Research</span>
+    </div>
+    <div class="NavItem" routerLink="/profile" routerLinkActive="active">
+        <i class="far fa-user"></i>
+        <span>Profile</span>
+    </div>
+</div>

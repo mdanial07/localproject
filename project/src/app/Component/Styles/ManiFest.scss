@@ -1,0 +1,38 @@
+.MainHeader {
+    background-color: #0768c9;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    i {
+      padding: 0 20px;
+      font-size: 24px;
+    }
+}
+.ManiFest{
+    padding: 0 15px;
+    .ExpensionPanel{
+        border-radius: 10px;
+        background-color: #f4f4f4;
+        margin: 22px 5px;
+        box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.19);        
+    }
+    .Title{
+        font-size: 20px;
+    }
+    .ItemList{
+        padding: 10px 0;
+        .Item{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 5px;
+            font-size: 16px;
+        }
+    }
+}
