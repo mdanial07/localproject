@@ -1,28 +1,31 @@
 <div class="MainHeader">
-    <i class="fa fa-arrow-left" routerLink="/"></i>
-    <span>Manifest</span>
-</div>
-
-<div class="ManiFest">
-    <mat-accordion *ngFor="let value of ManiFestArray">
-        <mat-expansion-panel class="ExpensionPanel" [expanded]="value.expend">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    <div class="Title">
-                        <strong>{{value.day}}, </strong>
-                        <span> {{value.date}}, {{value.year}}</span>
+        <i class="fa fa-arrow-left" routerLink="/"></i>
+        <span>Manifest</span>
+    </div>
+    
+    <div class="ManiFest">
+        <mat-accordion *ngFor="let value of ManiFestArray">
+            <mat-expansion-panel class="ExpensionPanel" [expanded]="value.expend">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <div class="Title">
+                            <strong>{{value.date | date: 'EEEE'}} </strong>
+                            <span> {{value.date | date: 'MMM d'}}, {{value.date | date: 'yyyy'}}</span>
+                        </div>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-divider></mat-divider>
+                <div *ngIf="value.items.length != 0">
+                    <div class="ItemList" *ngFor="let v of value.items">
+                        <div class="Item">
+                            <span>{{v.key}}</span>
+                            <span>
+                            <strong>{{v.value}}</strong>
+                        </span>
+                        </div>
                     </div>
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-divider></mat-divider>
-            <div class="ItemList" *ngFor="let v of value.data">
-                <div class="Item">
-                    <span>{{v.cell}}</span>
-                    <span>
-                        <strong>{{v.value}}</strong>
-                    </span>
                 </div>
-            </div>
-        </mat-expansion-panel>
-    </mat-accordion>
-</div>
+                <h3 *ngIf="value.items.length == 0" style="margin-top: 20px; text-align: center">No Records :(</h3>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>

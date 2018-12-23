@@ -1,4 +1,4 @@
-.SearchBar{
+.SearchBar {
     background-color: #0768c9;
     color: #fff;
     height: 75px;
@@ -6,12 +6,12 @@
     flex-direction: row;
     align-items: center;
     padding: 0 15px;
-    .field{
+    .field {
         border: 1px solid #fff;
         padding: 5px 15px;
         border-radius: 25px;
         width: 100%;
-        input{
+        input {
             width: 100%;
             border: none;
             background-color: unset;
@@ -21,59 +21,60 @@
             color: #fff;
         }
     }
-    i{
+    i {
         padding: 0 20px;
         font-size: 28px;
     }
 }
-.AllCards{
+
+.AllCards {
     display: flex;
     flex-direction: column;
     margin-bottom: 68px;
-    .Card{
+    .Card {
         margin: 10px 0;
-        background-color: #fff;        
+        background-color: #fff;
         box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.19);
-        .Header{
+        .Header {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             padding: 10px;
             background-color: #fff;
-            .Avator{
+            .Avator {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                img{
+                img {
                     width: 60px;
                 }
-                .detail{
+                .detail {
                     display: flex;
                     flex-direction: column;
                     margin-left: 15px;
-                    span{
+                    span {
                         font-weight: bold;
                         font-size: 17px;
                     }
                 }
             }
-            .TimeandPinSection{
+            .TimeandPinSection {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 color: #d1d1d1;
-                .DateTime{
+                .DateTime {
                     display: flex;
                     flex-direction: column;
                     font-size: 13px;
                     padding: 0 10px;
                     font-weight: bold;
                 }
-                i{
+                i {
                     padding: 0 10px;
-                    font-size: 26px;            
+                    font-size: 26px;
                 }
-                .VerticalLine{
+                .VerticalLine {
                     background-color: #d1d1d1;
                     width: 1.5px;
                     height: 50px;
@@ -81,34 +82,46 @@
                 }
             }
         }
-        .Post{
+        .Post {
             padding: 10px 20px;
-            font-size: 22px;    
+            font-size: 22px;
+            .audioo {
+                margin-top: 15px;
+                margin-bottom: -10px;
+            }
         }
-        .CommentSection{
+        .CommentSection {
             padding: 0 10px 20px;
-            .LikeShare{
+            .LikeShare {
                 color: #0768c9;
                 padding: 10px 15px;
                 font-weight: bold;
                 font-size: 13px;
+                .comments {
+                    background: transparent;
+                    border: 0px;
+                    cursor: pointer;
+                    margin-left: -5px;
+                    color: #0768c9;
+                    font-weight: bold;
+                }
             }
-            .commentInput{
+            .commentInput {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 padding: 0 10px;
-                .field{
+                .field {
                     border: 1px solid #818181;
                     padding: 5px 10px;
                     border-radius: 25px;
                     width: 100%;
-                    input{
+                    input {
                         width: 100%;
                         border: none;
                     }
                 }
-                i{
+                i {
                     padding: 0 20px;
                     font-size: 28px;
                 }
@@ -116,7 +129,8 @@
         }
     }
 }
-.Fab{
+
+.Fab {
     position: fixed;
     cursor: pointer;
     bottom: 98px;
@@ -128,8 +142,8 @@
     box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.3), 0 3px 7px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     justify-content: center;
-    align-items: center;    
-    i{
+    align-items: center;
+    i {
         font-size: 24px;
         color: #fff;
     }

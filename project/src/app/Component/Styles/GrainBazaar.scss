@@ -24,15 +24,17 @@
       background-color: #fff;
       color: #0768c9;
       display: flex;
+      cursor: pointer;
       justify-content: center;
       align-items: center;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
+      // border-top-left-radius: 10px;
+      // border-bottom-left-radius: 10px;
     }
 
     .pkrus {
       width: 25%;
       height: 35px;
+      cursor: pointer;
       background-color: #2a2ac1;
       color: #fff;
       display: flex;
@@ -46,6 +48,7 @@
       background-color: #fff;
       color: #0768c9;
       display: flex;
+      cursor: pointer;
       justify-content: center;
       align-items: center;
       border-top-right-radius: 10px;
@@ -76,8 +79,8 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-      padding-right: 15px;
-
+      // padding-right: 15px;
+      width: 32%;
       .rskb {
         display: flex;
         flex-direction: column;

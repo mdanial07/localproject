@@ -1,0 +1,10 @@
+<div *ngIf="data.length != 0">
+        <div *ngFor="let comment of data; index as i" style="display: flex; flex-direction: column;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between">
+                <div>{{comment.comment}}</div>
+                <div>{{comment.created_at | date: 'MMM d, h:mm a'}}</div>
+            </div>
+            <hr *ngIf="data.length-1 != i">
+        </div>
+    </div>
+    <h3 *ngIf="data.length == 0" style="margin: 0px; text-align: center">No Comments :(</h3>
