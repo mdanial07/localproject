@@ -13,12 +13,6 @@ export class Blogs implements OnInit {
         this.http.get('https://grainmarket.qubolt.com/api/admin/get/blogs').subscribe(res => {
             console.log(res)
             this.Blog = res
-            console.log(this.Blog)
-            let abc = this.Blog[0]
-            console.log(abc['description'])
         })
-    }
-    Description(element) {
-
     }
 }
