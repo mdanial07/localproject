@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div style="display: flex; flex-direction: column">
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+            <mat-error *ngIf="form.controls.name.hasError('required')">Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="form.controls.email.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="form.controls.email.hasError('email')">Invalid Email</mat-error>
+        </mat-form-field>
+    </div>
+    <div style="display: flex; justify-content: center">
+        <button [disabled]="btnStatus" mat-raised-button type="submit">Submit</button>
+        <button [disabled]="btnStatus" mat-button type="button" [mat-dialog-close]>Close</button>
+    </div>
+</form>

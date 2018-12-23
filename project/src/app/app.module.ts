@@ -22,6 +22,7 @@ import {
   GrainBazar,
   Blogs,
 } from './Component'
+import { CommentDetailsDialog } from './Component/Blogs/Blogs';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {
     RedSpeckledKidneyBeans,
     GrainBazar,
     Blogs,
-    CommentsDialog
+    CommentsDialog,
+    CommentDetailsDialog
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import {
     HttpClientModule,
   ],
   entryComponents: [
-    CommentsDialog
+    CommentsDialog,
+    CommentDetailsDialog
   ],
   providers: [],
   bootstrap: [AppComponent]
