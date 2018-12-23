@@ -1,4 +1,4 @@
-import { HomePage } from './HomePage/HomePage';
+import { HomePage, CommentsDialog } from './HomePage/HomePage';
 import { Tweets } from './Tweets/Tweets';
 import { Profile } from './Profile/Profile';
 import { TemplateLayout } from './TemplateLayout/TemplateLayout';
@@ -8,7 +8,7 @@ import { Filter } from './Filter/Filter';
 import { ManiFest } from './ManiFest/ManiFest';
 import { RedSpeckledKidneyBeans } from './RedSpeckledKidneyBeans/RedSpeckledKidneyBeans';
 import { GrainBazar } from './GrainBazaar/GrainBazaar';
-import { Blogs } from './Blogs/Blogs';
+import { Blogs, CommentDetailsDialog } from './Blogs/Blogs';
 
 export {
     HomePage,
@@ -21,5 +21,7 @@ export {
     ManiFest,
     RedSpeckledKidneyBeans,
     GrainBazar,
-    Blogs
+    Blogs,
+    CommentsDialog,
+    CommentDetailsDialog
 }

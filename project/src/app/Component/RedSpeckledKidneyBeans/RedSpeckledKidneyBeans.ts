@@ -11,12 +11,22 @@ export class RedSpeckledKidneyBeans implements OnInit {
     constructor(private http: HttpClient) { }
     PricingDetails;
     myChart: any;
+    graph;
     ngOnInit() {
+        // this.http.get('https://grainmarket.qubolt.com/api/admin/get/tramodity/pricing/graph/10/2018-08-01/2018-08-30').subscribe(res => {
+        //     console.log(res)
+        //     this.graph = res['graphData']
+        //     console.log(this.graph)
+        // })
+        // this.graph.map(res => {
+        //     console.log(res)
+        // })
+
         this.PricingDetails = JSON.parse(localStorage.getItem('item'));
         console.log(this.PricingDetails)
 
         this.myChart = new Chart('myChart', {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
                 datasets: [
@@ -31,7 +41,7 @@ export class RedSpeckledKidneyBeans implements OnInit {
                             'rgba(4, 45, 89, 0.6)',
                             'rgba(4, 45, 89, 0.6)',
                             'rgba(4, 45, 89, 0.6)',
-                      ],
+                        ],
                         borderColor: [
                             'rgba(4, 45, 89, 1)',
                             'rgba(4, 45, 89, 1)',

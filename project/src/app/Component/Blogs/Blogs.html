@@ -5,7 +5,7 @@
     <i class="fa fa-filter"></i>
 </div>
 <div class="AllCards">
-    <div class="Card" *ngFor="let v of Blog">
+    <div class="Card" *ngFor="let v of Blog; index as i">
         <div class="Header">
             <div class="Avator">
                 <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1" alt="" class="Image">
@@ -53,10 +53,12 @@
             </div>
             <div class="commentInput">
                 <span class="field">
-                <input type="text" placeholder="Write comment..">
+                <input type="text" [(ngModel)]="comment[i]" placeholder="Write comment..">
             </span>
                 <i class="far fa-heart"></i>
-                <i class="fa fa-share-square"></i>
+                <button mat-icon-button>
+                    <i style="padding: 0px !important;" class="fa fa-share-square" (click)="postComment(i)"></i>
+                </button>
             </div>
         </div>
     </div>
