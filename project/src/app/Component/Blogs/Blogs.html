@@ -1,0 +1,146 @@
+<div class="SearchBar">
+    <span class="field">
+        <input type="text" placeholder="Search..">
+    </span>
+    <i class="fa fa-filter"></i>
+</div>
+<div class="AllCards">
+    <div class="Card" *ngFor="let v of Blog">
+        <div class="Header">
+            <div class="Avator">
+                <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                    alt="" class="Image">
+                <div class="detail">
+                    <span>{{v.author}}</span>
+                    <!-- <span style="font-size: 12px;">ABC Company</span> -->
+                </div>
+            </div>
+            <!-- <div class="TimeandPinSection">
+                <div class="DateTime">
+                    <span>{{v.create_date}}</span>
+                </div>
+                <span class="VerticalLine"></span>
+                <i class="fa fa-paperclip"></i>
+            </div> -->
+        </div>
+        <hr>
+        <div>
+            <img src="{{v.image}}" alt="blog image" style="width: 100%;">
+        </div>
+        <div class="Post">
+            <div class="co8aDb gsrt" aria-level="3" role="heading" style="margin-bottom: 15px; color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;"><b>he
+                    qualities of an&nbsp;<b>effective team leader</b>&nbsp;inspire the trust and respect of the&nbsp;<b>team</b>&nbsp;and
+                    stimulate production within the workplace.</b>
+                <div class="RqBzHd" style="padding: 0px 20px; color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px;">
+                    <ul class="i8Z77e" style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; border: 0px;">
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">A
+                            Clear Communicator.&nbsp;<b>Effective team leaders</b>&nbsp;communicate clearly. ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Organized.
+                            ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Confident
+                            in the&nbsp;<b>Team</b>. ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Respectful
+                            to Others. ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Fair
+                            and Kind. ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">An
+                            Example of Integrity. ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Influential.
+                            ...</li>
+                        <li class="TrT0Xe" style="margin: 0px 0px 4px; padding: 0px; border: 0px; list-style-type: disc;">Willing
+                            to Delegate.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="CommentSection">
+        <div class="LikeShare">
+            <span>{{v.comments_count}} Comments</span>
+        </div>
+        <div class="commentInput">
+            <span class="field">
+                <input type="text" placeholder="Write comment..">
+            </span>
+            <i class="far fa-heart"></i>
+            <i class="fa fa-share-square"></i>
+        </div>
+    </div>
+</div>
+<!-- <div class="Card">
+        <div class="Header">
+            <div class="Avator">
+                <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                    alt="" class="Image">
+                <div class="detail">
+                    <span>Muhammad Danial</span>
+                    <span style="font-size: 12px;">ABC Company</span>
+                </div>
+            </div>
+            <div class="TimeandPinSection">
+                <div class="DateTime">
+                    <span>Dec 12</span>
+                    <span>05:00 PM</span>
+                </div>
+                <i class="fa fa-paperclip"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="Post">
+            <span>My Name is Abc</span>
+        </div>
+        <hr>
+        <div class="CommentSection">
+            <div class="LikeShare">
+                <span>389 Likes - 4 Comments - 42 Share</span>
+            </div>
+            <div class="commentInput">
+                <span class="field">
+                    <input type="text" placeholder="Write comment..">
+                </span>
+                <i class="far fa-heart"></i>
+                <i class="fa fa-share-square"></i>
+            </div>
+        </div>
+    </div>
+    <div class="Card">
+        <div class="Header">
+            <div class="Avator">
+                <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                    alt="" class="Image">
+                <div class="detail">
+                    <span>Muhammad Danial</span>
+                    <span style="font-size: 12px;">ABC Company</span>
+                </div>
+            </div>
+            <div class="TimeandPinSection">
+                <div class="DateTime">
+                    <span>Dec 12</span>
+                    <span>05:00 PM</span>
+                </div>
+                <i class="fa fa-paperclip"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="Post">
+            <span>My Name is Abc</span>
+        </div>
+        <hr>
+        <div class="CommentSection">
+            <div class="LikeShare">
+                <span>389 Likes - 4 Comments - 42 Share</span>
+            </div>
+            <div class="commentInput">
+                <span class="field">
+                    <input type="text" placeholder="Write comment..">
+                </span>
+                <i class="far fa-heart"></i>
+                <i class="fa fa-share-square"></i>
+            </div>
+        </div>
+    </div> -->
+
+<!-- <div class="Fab" routerLink="newpost">
+    <i class="fa fa-plus"></i>
+</div> -->

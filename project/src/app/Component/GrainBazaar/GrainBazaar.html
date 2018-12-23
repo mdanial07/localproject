@@ -4,45 +4,111 @@
         <strong>12th Jan</strong>
     </span>
     <div class="currency">
-        <span class="pkr">PKR</span>
-        <span class="pkrus">PKR-US $</span>
-        <span class="us">US $</span>
+        <span class="{{pkr}}" (click)="func_pkr()">PKR</span>
+        <span class="{{pkrus}}" (click)="func_pkrnus()">PKR-US $</span>
+        <span class="{{us}}" (click)="func_us()">US $</span>
     </div>
 </div>
 
 <div class="Packeges">
-    <div class="MainTop">
-        <div class="Left">
-            <div class="rskb">
-                <span class="Heading">RSKB</span>
-                <span>Red Speckled</span>
-                <span>Kidney Beans</span>
+    <div *ngIf="valuepkrus">
+        <div class="MainTop" *ngFor="let v of Pricing" (click)="SelectDaal(v)">
+            <div class="Left">
+                <div class="rskb">
+                    <span class="Heading">{{v.daalname.name}}</span>
+                    <span>{{v.daalname.full}}</span>
+                </div>
+
+                <div class="flag">
+                    <img src="{{v.flagUrl}}" alt=""> {{v.origin}}
+                </div>
             </div>
-            <div class="flag">
-                <img src="https://lipis.github.io/flag-icon-css/flags/4x3/mm.svg" alt=""> Myanmar
+            <div class="horizontalLine">
             </div>
-        </div>
-        <div class="horizontalLine">
-        </div>
-        <div class="LocalInternational">
-            <div class="LocalInter">
-                <span class="name">Local</span>
-                <span>PKR
-                    <strong>470</strong>/kg</span>
-                <span class="positive">+ 0.63</span>
+            <div class="LocalInternational">
+                <div class="LocalInter">
+                    <span class="name">Local</span>
+                    <span>PKR
+                        <strong>{{v.localPrice}}</strong>/kg</span>
+                    <span class="positive">+ {{v.localVar}}</span>
+                </div>
+                <div class="LocalInter">
+                    <span class="name">International</span>
+                    <span>US$
+                        <strong>{{v.internationalPrice}}</strong>/MT</span>
+                    <span class="negative">{{v.internationalVar}}</span>
+                </div>
             </div>
-            <div class="LocalInter">
-                <span class="name">International</span>
-                <span>US$
-                    <strong>470</strong>/MT</span>
-                <span class="negative">- 0.63</span>
+            <div class="arrow">
+                <i class="fa fa-chevron-right"></i>
             </div>
-        </div>
-        <div class="arrow">
-            <i class="fa fa-chevron-right"></i>
         </div>
     </div>
-    <div class="Main">
+    <div *ngIf="valueus">
+        <div class="MainTop" *ngFor="let v of Pricing" (click)="SelectDaal(v)">
+            <div class="Left">
+                <div class="rskb">
+                    <span class="Heading">{{v.daalname.name}}</span>
+                    <span>{{v.daalname.full}}</span>
+                </div>
+                <div class="flag">
+                    <img src="{{v.flagUrl}}" alt=""> {{v.origin}}
+                </div>
+            </div>
+            <div class="horizontalLine">
+            </div>
+            <div class="LocalInternational">
+                <div class="LocalInter">
+                    <span class="name">Local</span>
+                    <span>US$
+                        <strong>{{v.localPriceUSD}}</strong>/MT</span>
+                    <span class="positive">+ {{v.localVar}}</span>
+                </div>
+                <div class="LocalInter">
+                    <span class="name">International</span>
+                    <span>US$
+                        <strong>{{v.internationalPrice}}</strong>/MT</span>
+                    <span class="negative">{{v.internationalVar}}</span>
+                </div>
+            </div>
+            <div class="arrow">
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="valuepkr">
+        <div class="MainTop" *ngFor="let v of Pricing" (click)="SelectDaal(v)">
+            <div class="Left">
+                <div class="rskb">
+                    <span class="Heading">{{v.daalname.name}}</span>
+                    <span>{{v.daalname.full}}</span>
+                </div>
+                <div class="flag">
+                    <img src="{{v.flagUrl}}" alt=""> {{v.origin}}
+                </div>
+            </div>
+            <div class="horizontalLine">
+            </div>
+            <div class="LocalInternational">
+                <div class="LocalInter">
+                    <span class="name">Local</span>
+                    <span>PKR
+                        <strong>{{v.localPrice}}</strong>/kg</span>
+                    <span class="positive">+ {{v.localVar}}</span>
+                </div>
+                <div class="LocalInter">
+                    <span class="name">International</span>
+                    <span>PKR
+                        <strong>{{v.internationalPricePKR}}</strong>/kg</span>
+                    <span class="negative">{{v.internationalVar}}</span>
+                </div>
+            </div>
+            <div class="arrow">
+                <i class="fa fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="Main">
         <div class="Left">
             <div class="rskb">
                 <span class="Heading">BMP</span>
@@ -164,5 +230,5 @@
         <div class="arrow">
             <i class="fa fa-chevron-right"></i>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
     selector: 'manifest',
@@ -6,68 +7,23 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['../Styles/ManiFest.scss']
 })
 export class ManiFest implements OnInit {
-    constructor() { }
-    ngOnInit() { }
-    ManiFestArray = [
-        {
-            day: 'Tuesday',
-            date: 'Sept 11',
-            year: '2011',
-            expend: true,
-            data: [
-                {
-                    cell: 'BM',
-                    value: '28 FCL',
-                }, {
-                    cell: 'CL',
-                    value: '102 FCL',
-                }, {
-                    cell: 'DCP',
-                    value: '312 FCL',
-                }, {
-                    cell: 'KCP',
-                    value: '642 FCL',
-                }, {
-                    cell: 'YP',
-                    value: '1209 FCL',
-                }
-            ]
-        }, {
-            day: 'Monday',
-            date: 'Sept 10',
-            year: '2011',
-            expend: false,
-            data: [
-                {
-                    cell: 'BM',
-                    value: '28 FCL',
-                }, {
-                    cell: 'CL',
-                    value: '102 FCL',
-                }, {
-                    cell: 'DCP',
-                    value: '312 FCL',
-                }, {
-                    cell: 'KCP',
-                    value: '642 FCL',
-                }, {
-                    cell: 'YP',
-                    value: '1209 FCL',
-                }
-            ]
-        }, {
-            day: 'Sunday',
-            date: 'Sept 09',
-            year: '2011',
-            expend: false,
-            data: []
-        }, {
-            day: 'Saturday',
-            date: 'Sept 08',
-            year: '2011',
-            expend: false,
-            data: []
-        }
-
-    ]
+    ManiFestArray = []
+    constructor(public service: ApiServiceService) { }
+    ngOnInit() {
+        var days = [1, 2, 3, 4, 5, 6, 7]
+        days.forEach(element => {
+            var date = new Date();
+            var last = new Date(date.getTime() - (element * 24 * 60 * 60 * 1000));
+            let datee = `${last.getFullYear()}-${last.getMonth() + 1}-${last.getDate()}`
+            this.service.retrieveManifest(datee).subscribe(res => {
+                if (element == 1) { res.expend = true }
+                else { res.expend = false }
+                this.ManiFestArray.push(res)
+            })
+        })
+        this.ManiFestArray.sort(function (o1, o2) {
+            return o1.date > o2.date ? -1 : o1.date < o2.date ? 1 : 0;
+        });
+        console.log(this.ManiFestArray)
+    }
 }

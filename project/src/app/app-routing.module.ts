@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   TemplateLayout,
   HomePage,
-  Tweets,
   Profile,
   NewPost,
   EditProfile,
@@ -11,6 +10,7 @@ import {
   ManiFest,
   RedSpeckledKidneyBeans,
   GrainBazar,
+  Blogs,
 } from './Component'
 
 const routes: Routes = [
@@ -20,10 +20,11 @@ const routes: Routes = [
       { path: '', component: HomePage },
       { path: 'profile', component: Profile },
       { path: 'grainbazar', component: GrainBazar },
-      { path: 'redspeckledkidneybeans', component: RedSpeckledKidneyBeans },
       { path: 'manifest', component: ManiFest },
+      { path: 'blogs', component: Blogs },
     ]
   },
+  { path: 'redspeckledkidneybeans', component: RedSpeckledKidneyBeans },
   { path: 'newpost', component: NewPost },
   { path: 'filter', component: Filter },
   { path: 'edit', component: EditProfile },

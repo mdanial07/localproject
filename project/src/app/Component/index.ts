@@ -8,6 +8,7 @@ import { Filter } from './Filter/Filter';
 import { ManiFest } from './ManiFest/ManiFest';
 import { RedSpeckledKidneyBeans } from './RedSpeckledKidneyBeans/RedSpeckledKidneyBeans';
 import { GrainBazar } from './GrainBazaar/GrainBazaar';
+import { Blogs } from './Blogs/Blogs';
 
 export {
     HomePage,
@@ -20,4 +21,5 @@ export {
     ManiFest,
     RedSpeckledKidneyBeans,
     GrainBazar,
+    Blogs
 }

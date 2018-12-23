@@ -1,29 +1,29 @@
 <div class="MainHeader">
-    <i class="fa fa-arrow-left" routerLink="/"></i>
-    <span>Red Speckled Kidney Beans</span>
+    <i class="fa fa-arrow-left" routerLink="/grainbazar"></i>
+    <span>{{PricingDetails.daalname.full}}</span>
 </div>
 <div class="RKSBS">
     <div class="Top">
         <div class="rskb">
-            <span class="Heading">RSKB</span>
-            <span>Red Speckled Kidney Beans</span>
+            <span class="Heading">{{PricingDetails.daalname.name}}</span>
+            <span>{{PricingDetails.daalname.full}}</span>
         </div>
         <div class="flag">
-            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/mm.svg" alt=""> Myanmar
+            <img src="{{PricingDetails.flagUrl}}" alt=""> {{PricingDetails.origin}}
         </div>
     </div>
     <div class="LocalInternational">
         <div class="LocalInter">
             <span class="name">Local</span>
-            <h2>470.01</h2>
+            <h2>{{PricingDetails.localPrice}}</h2>
             <span>PKR/kg</span>
-            <span class="positive">+ 0.63</span>
+            <span class="positive">+ {{PricingDetails.localVar}}</span>
         </div>
         <div class="LocalInter">
             <span class="name">International</span>
-            <h2>700.02</h2>
+            <h2>{{PricingDetails.internationalPrice}}</h2>
             <span>US$/MT</span>
-            <span class="negative">- 0.63</span>
+            <span class="negative">{{PricingDetails.internationalVar}}</span>
         </div>
     </div>
     <div class="Graph">
@@ -35,20 +35,23 @@
         <h5>Import Volume</h5>
         <div class="Items">
             <div class="ItemLeft">
-                <span>1 week</span>
-                <span>1 month</span>
-                <span>3 months</span>
-                <span>6 months</span>
-                <span>1 year</span>
+                <span>Today</span>
+                <span>1 Week</span>
+                <span>1 Month</span>
+                <!-- <span>6 months</span>
+                <span>1 year</span> -->
             </div>
             <div class="ItemRight">
                 <span>
-                    <strong>28 FCL</strong>
+                    <strong>{{PricingDetails.manifest_today.fcl}} FCL</strong>
                 </span>
                 <span>
-                    <strong>102 FCL</strong>
+                    <strong>{{PricingDetails.manifest_week.fcl}} FCL</strong>
                 </span>
                 <span>
+                    <strong>{{PricingDetails.manifest_month.fcl}} FCL</strong>
+                </span>
+                <!-- <span>
                     <strong>312 FCL</strong>
                 </span>
                 <span>
@@ -56,7 +59,7 @@
                 </span>
                 <span>
                     <strong>1209 FCL</strong>
-                </span>
+                </span> -->
             </div>
         </div>
     </div>
@@ -69,10 +72,10 @@
             </div>
             <div class="ItemRight">
                 <span>
-                    <strong>42 - 56</strong>
+                    <strong>{{PricingDetails.localPrice}} - {{PricingDetails.internationalPricePKR}}</strong>
                 </span>
                 <span>
-                    <strong>42 - 56</strong>
+                    <strong>{{PricingDetails.localPrice}} - {{PricingDetails.internationalPrice}}</strong>
                 </span>
             </div>
         </div>
