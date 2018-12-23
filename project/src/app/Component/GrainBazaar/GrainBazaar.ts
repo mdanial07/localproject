@@ -36,7 +36,7 @@ export class GrainBazar implements OnInit {
         },
     ]
     ngOnInit() {
-        this.http.get('http://tramodity.com/api/grainsbazaar/pricing/').subscribe(res => {
+        this.http.get('https://grainmarket.qubolt.com/api/admin/get/tramodity/pricing').subscribe(res => {
             console.log(res)
             this.Pricing = res['data']
             this.Pricing.map((res, i) => {

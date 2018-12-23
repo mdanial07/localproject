@@ -14,9 +14,9 @@ export class ApiServiceService {
     return this.http.get<any>(`${environment.url}api/admin/get/posts`)
   }
   retrieveManifest(date): Observable<any> {
-    return this.http.get<any>(`${environment.url2}api/grainsbazaar/manifest/${date}/`)
+    return this.http.get<any>(`${environment.url}api/admin/get/tramodity/manifest/${date}`)
   }
   postComment(obj): Observable<any> {
-    return this.http.post<any>(`http://grainmarket.qubolt.com/api/admin/post/post/comment`, obj)
+    return this.http.post<any>(`https://grainmarket.qubolt.com/api/admin/post/post/comment`, obj)
   }
 }
