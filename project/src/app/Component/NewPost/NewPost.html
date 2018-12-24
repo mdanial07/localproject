@@ -5,8 +5,7 @@
 <div class="Card">
     <div class="Header">
         <div class="Avator">
-            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-                alt="" class="Image">
+            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1" alt="" class="Image">
             <div class="detail">
                 <span>Muhammad Danial</span>
                 <span style="font-size: 12px;">ABC Company</span>
@@ -20,7 +19,7 @@
     <hr>
     <div class="Post">
         <span class="field">
-            <textarea type="text" placeholder="Whats on your mind..."></textarea>
+            <textarea type="text" [(ngModel)]="postText" placeholder="Whats on your mind..."></textarea>
         </span>
     </div>
 </div>
@@ -30,6 +29,6 @@
         <i class="fa fa-microphone"></i>
     </div>
     <div class="Button">
-        <button mat-button>POST</button>
+        <button [disabled]="btnStatus" (click)="submit()" mat-button>POST</button>
     </div>
 </div>
