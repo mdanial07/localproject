@@ -61,7 +61,7 @@ export class CommentDetailsDialog implements OnInit {
         if (this.form.valid) {
             this.btnStatus = true
             let obj = { ...this.data, ...this.form.value }
-            this.http.post("http://grainmarket.qubolt.com/api/admin/post/blog/comment", obj).subscribe(res => {
+            this.http.post("https://grainmarket.qubolt.com/api/admin/post/blog/comment", obj).subscribe(res => {
                 console.log(res)
                 this.btnStatus = false
                 this.dialogRef.close()
