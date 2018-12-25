@@ -1,7 +1,7 @@
 .MainHeader {
   background-color: #0768c9;
   color: #fff;
-  height: 60px;
+  height: 66px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +20,8 @@
 
 .Card {
   margin: 10px 0;
-  background-color: #fff;  
+  background-color: #fff;
+
   .Header {
     display: flex;
     flex-direction: row;
@@ -60,6 +61,7 @@
         padding: 0 10px;
         font-size: 26px;
       }
+
       .VerticalLine {
         background-color: #d1d1d1;
         width: 1.5px;
@@ -68,13 +70,16 @@
       }
     }
   }
+
   hr {
     margin: 0 !important;
   }
+
   .Post {
     padding: 10px 20px;
     font-size: 22px;
     height: 75vh;
+
     .field {
       padding: 5px 10px;
       width: 100%;
@@ -87,31 +92,50 @@
   }
 }
 
-.PostMessage{
+.PostMessage {
+  padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #cdcdcd;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+
+  .Audio {
+      audio{
+          width: 200px;
+          height: 40px;
+      }
+    }
+
+  .Icons {
+    i {
+      color: #737373;
+      font-size: 24px;
+      padding: 10px 5px;
+    }
+  }
+
+  .Button {
+    margin: 10px 5px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #cdcdcd;
-    position: fixed;
-    width: 100%;
-    bottom: 0px;
-    background-color: #fff;
-    .Icons{
-        i{
-            color: #737373;
-            font-size: 24px;
-            padding: 5px 10px 5px 25px;
-        }
+
+    button {
+      background-color: #0768c9;
+      color: #fff;
+      padding: 0 10px;
+      font-size: 15px;
     }
-    .Button {
-        margin: 10px 25px;
-        display: flex;
-        button {
-            background-color: #0768c9;
-            color: #fff;
-            padding: 2px 23px;
-            font-size: 18px;
-        }
-    }
+  }
+}
+
+.stop-button {
+  color: #0768c9 !important;
+}
+
+.discard {
+  color: #cd0000 !important;
 }

@@ -5,10 +5,11 @@
 <div class="Card">
     <div class="Header">
         <div class="Avator">
-            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1" alt="" class="Image">
+            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                alt="" class="Image">
             <div class="detail">
-                <span>Muhammad Danial</span>
-                <span style="font-size: 12px;">ABC Company</span>
+                <span>{{user.first_name}} {{user.last_name}}</span>
+                <!-- <span style="font-size: 12px;">ABC Company</span> -->
             </div>
         </div>
         <div class="TimeandPinSection">
@@ -25,8 +26,20 @@
 </div>
 <div class="PostMessage">
     <div class="Icons">
-        <i class="fa fa-camera"></i>
-        <i class="fa fa-microphone"></i>
+        <button mat-icon-button><i class="fa fa-camera"></i></button>
+        <button mat-icon-button *ngIf="!isRecording && !blobUrl" (click)="startRecording()"><i class="fa fa-microphone"></i></button>
+        <div style="display: inline;" *ngIf="isRecording && !blobUrl">
+            <button mat-icon-button *ngIf="isRecording && !blobUrl" (click)="stopRecording()"><i class="stop-button fa fa-microphone"></i></button>{{recordedTime}}
+        </div>
+        <button mat-icon-button *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()"><i class="discard fa fa-times"></i></button>
+        <!-- <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div> -->
+    </div>
+    <div style="margin-bottom: -6px;">
+        <div class="Audio">
+            <audio *ngIf="!isRecording && blobUrl" controls>
+                <source [src]="blobUrl" type="audio/webm">
+            </audio>
+        </div>
     </div>
     <div class="Button">
         <button [disabled]="btnStatus" (click)="submit()" mat-button>POST</button>
