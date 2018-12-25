@@ -37,14 +37,22 @@
             <hr>
             <div class="CommentSection">
                 <div class="LikeShare">
-                    <span>{{post.likes}} Likes - <button class="comments" (click)="viewComments(post)">{{post.comments.length}}
-                            Comments</button></span>
+                    <span>{{post.likes}} Likes -
+                        <button class="comments" (click)="viewComments(post)">
+                            {{post.comments.length}} Comments
+                        </button>
+                    </span>
                 </div>
                 <div class="commentInput">
                     <span class="field">
                         <input type="text" [(ngModel)]="comment[post.id]" placeholder="Write comment..">
                     </span>
-                    <i class="far fa-heart"></i>
+                    <button mat-icon-button *ngIf="!post.userlike" [disabled]="commentBtnStatus[post.id]">
+                        <i class="far fa-heart" (click)="LikePost(post)"></i>
+                    </button>
+                    <span *ngIf="post.userlike">
+                        <i class="fas fa-heart" style="color: red"></i>
+                    </span>
                     <button mat-icon-button [disabled]="commentBtnStatus[post.id]">
                         <i style="padding: 0px !important;" class="fa fa-share-square" (click)="postComment(post)"></i>
                     </button>
@@ -53,7 +61,11 @@
         </div>
     </div>
 </div>
-
-<div class="Fab" routerLink="newpost">
+ 
+<div class="Fab" routerLink="newpost"  *ngIf="showPost">
     <i class="fa fa-plus"></i>
+</div>
+
+<div class="Add" routerLink="register" *ngIf="showAddUser">
+    <i class="fa fa-user-plus"></i>
 </div>

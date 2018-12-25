@@ -19,6 +19,8 @@ import {
   Blogs,
   CommentsDialog,
   CommentDetailsDialog,
+  Register,
+  Login,
 } from './Component';
 
 @NgModule({
@@ -36,7 +38,9 @@ import {
     GrainBazar,
     Blogs,
     CommentsDialog,
-    CommentDetailsDialog
+    CommentDetailsDialog,
+    Register,
+    Login,
   ],
   imports: [
     BrowserModule,

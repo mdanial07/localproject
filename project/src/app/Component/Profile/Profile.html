@@ -1,171 +1,125 @@
-<div class="Header">
-    <div class="Avator">
-        <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-            alt="" class="Image">
-        <div class="detail" routerLink="/edit">
-            <span>Muhammad Danial</span>
-            <span style="font-size: 12px;">ABC Company</span>
+<div *ngIf="profile">
+    <div class="Header">
+        <div class="Avator">
+            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                alt="" class="Image">
+            <div class="detail" routerLink="/edit">
+                <span>{{userDetails.first_name}} {{userDetails.last_name}}</span>
+                <!-- <span style="font-size: 12px;">ABC Company</span> -->
+            </div>
+        </div>
+        <div class="Icon">
+            <i class="fa fa-edit" routerLink="/edit"></i>
+            <span (click)="Logout()">
+                Logout
+            </span>
         </div>
     </div>
-    <div class="Icon" routerLink="/edit">
-        <i class="fa fa-edit"></i>
-    </div>
+    <mat-tab-group>
+        <mat-tab label="My Posts">
+            <div class="AllCards">
+                <div *ngFor="let post of posts; index as i">
+                    <div class="Card">
+                        <div class="Header">
+                            <div class="Avator">
+                                <img src="http://grainmarket.qubolt.com/uploads/users/kSuF2xlFZi.jpeg" alt="" class="Image">
+                                <div class="detail">
+                                    <span>{{post.author.fname}} {{post.author.lname}}</span>
+                                    <span style="font-size: 12px;">{{post.author.company}}</span>
+                                </div>
+                            </div>
+                            <div class="TimeandPinSection">
+                                <div class="DateTime">
+                                    <span>{{post.create_date}}</span>
+                                    <!-- <span>{{post.create_date | date: 'h:mm a'}}</span> -->
+                                </div>
+                                <span class="VerticalLine"></span>
+                                <i class="fa fa-paperclip"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="Post">
+                            <span>{{post.text}}</span>
+                            <br>
+                            <span>
+                                <audio class="audioo" controls>
+                                    <source [src]="audio[i]" type="audio/webm"> Your browser does not support the audio
+                                    element.
+                                </audio>
+                            </span>
+                        </div>
+                        <hr>
+                        <div class="CommentSection">
+                            <div class="LikeShare">
+                                <span>{{post.likes}} Likes -
+                                    <button class="comments" (click)="viewComments(post)">
+                                        {{post.comments.length}} Comments
+                                    </button>
+                                </span>
+                            </div>
+                            <div class="commentInput">
+                                <span class="field">
+                                    <input type="text" [(ngModel)]="comment[post.id]" placeholder="Write comment..">
+                                </span>
+                                <button mat-icon-button *ngIf="!post.userlike" [disabled]="commentBtnStatus[post.id]">
+                                    <i class="far fa-heart" (click)="LikePost(post)"></i>
+                                </button>
+                                <span *ngIf="post.userlike">
+                                    <i class="fas fa-heart" style="color: red"></i>
+                                </span>
+                                <button mat-icon-button [disabled]="commentBtnStatus[post.id]">
+                                    <i style="padding: 0px !important;" class="fa fa-share-square" (click)="postComment(post)"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Save Posts">
+            <div class="AllCards">
+                <div class="Card">
+                    <div class="Header">
+                        <div class="Avator">
+                            <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
+                                alt="" class="Image">
+                            <div class="detail">
+                                <span>Muhammad Danial</span>
+                                <span style="font-size: 12px;">ABC Company</span>
+                            </div>
+                        </div>
+                        <div class="TimeandPinSection">
+                            <div class="DateTime">
+                                <span>Dec 12</span>
+                                <span>05:00 PM</span>
+                            </div>
+                            <span class="VerticalLine"></span>
+                            <i class="fa fa-paperclip"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="Post">
+                        <span>My Name is Abc</span>
+                    </div>
+                    <hr>
+                    <div class="CommentSection">
+                        <div class="LikeShare">
+                            <span>389 Likes - 4 Comments - 42 Share</span>
+                        </div>
+                        <div class="commentInput">
+                            <span class="field">
+                                <input type="text" placeholder="Write comment..">
+                            </span>
+                            <i class="far fa-heart"></i>
+                            <i class="fa fa-share-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
 </div>
-<mat-tab-group>
-    <mat-tab label="My Posts">
-        <div class="AllCards">
-            <div class="Card">
-                <div class="Header">
-                    <div class="Avator">
-                        <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-                            alt="" class="Image">
-                        <div class="detail">
-                            <span>Muhammad Danial</span>
-                            <span style="font-size: 12px;">ABC Company</span>
-                        </div>
-                    </div>
-                    <div class="TimeandPinSection">
-                        <div class="DateTime">
-                            <span>Dec 12</span>
-                            <span>05:00 PM</span>
-                        </div>
-                        <span class="VerticalLine"></span>
-                        <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="Post">
-                    <span>My Name is Abc</span>
-                </div>
-                <hr>
-                <div class="CommentSection">
-                    <div class="LikeShare">
-                        <span>389 Likes - 4 Comments - 42 Share</span>
-                    </div>
-                    <div class="commentInput">
-                        <span class="field">
-                            <input type="text" placeholder="Write comment..">
-                        </span>
-                        <i class="far fa-heart"></i>
-                        <i class="fa fa-share-square"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="Card">
-                <div class="Header">
-                    <div class="Avator">
-                        <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-                            alt="" class="Image">
-                        <div class="detail">
-                            <span>Muhammad Danial</span>
-                            <span style="font-size: 12px;">ABC Company</span>
-                        </div>
-                    </div>
-                    <div class="TimeandPinSection">
-                        <div class="DateTime">
-                            <span>Dec 12</span>
-                            <span>05:00 PM</span>
-                        </div>
-                        <span class="VerticalLine"></span>
-                        <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="Post">
-                    <span>My Name is Abc</span>
-                </div>
-                <hr>
-                <div class="CommentSection">
-                    <div class="LikeShare">
-                        <span>389 Likes - 4 Comments - 42 Share</span>
-                    </div>
-                    <div class="commentInput">
-                        <span class="field">
-                            <input type="text" placeholder="Write comment..">
-                        </span>
-                        <i class="far fa-heart"></i>
-                        <i class="fa fa-share-square"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="Card">
-                <div class="Header">
-                    <div class="Avator">
-                        <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-                            alt="" class="Image">
-                        <div class="detail">
-                            <span>Muhammad Danial</span>
-                            <span style="font-size: 12px;">ABC Company</span>
-                        </div>
-                    </div>
-                    <div class="TimeandPinSection">
-                        <div class="DateTime">
-                            <span>Dec 12</span>
-                            <span>05:00 PM</span>
-                        </div>
-                        <span class="VerticalLine"></span>
-                        <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="Post">
-                    <span>My Name is Abc</span>
-                </div>
-                <hr>
-                <div class="CommentSection">
-                    <div class="LikeShare">
-                        <span>389 Likes - 4 Comments - 42 Share</span>
-                    </div>
-                    <div class="commentInput">
-                        <span class="field">
-                            <input type="text" placeholder="Write comment..">
-                        </span>
-                        <i class="far fa-heart"></i>
-                        <i class="fa fa-share-square"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </mat-tab>
-    <mat-tab label="Save Posts">
-        <div class="AllCards">
-            <div class="Card">
-                <div class="Header">
-                    <div class="Avator">
-                        <img src="https://i1.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
-                            alt="" class="Image">
-                        <div class="detail">
-                            <span>Muhammad Danial</span>
-                            <span style="font-size: 12px;">ABC Company</span>
-                        </div>
-                    </div>
-                    <div class="TimeandPinSection">
-                        <div class="DateTime">
-                            <span>Dec 12</span>
-                            <span>05:00 PM</span>
-                        </div>
-                        <span class="VerticalLine"></span>
-                        <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="Post">
-                    <span>My Name is Abc</span>
-                </div>
-                <hr>
-                <div class="CommentSection">
-                    <div class="LikeShare">
-                        <span>389 Likes - 4 Comments - 42 Share</span>
-                    </div>
-                    <div class="commentInput">
-                        <span class="field">
-                            <input type="text" placeholder="Write comment..">
-                        </span>
-                        <i class="far fa-heart"></i>
-                        <i class="fa fa-share-square"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </mat-tab>
-</mat-tab-group>
+<div *ngIf="login">
+    <login></login>
+</div>

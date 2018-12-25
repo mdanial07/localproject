@@ -1,0 +1,21 @@
+<div class="MainHeader">
+    <i class="fa fa-arrow-left" routerLink="/"></i>
+    <span>Login</span>
+</div>
+<div class="CenterDiv">
+    <div class="Body">
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="EMAIL ADDRESS" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="PASSWORD" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <div class="Button">
+            <button mat-button (click)="Login()">Login</button>
+        </div>
+    </div>
+</div>

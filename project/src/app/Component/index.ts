@@ -9,6 +9,8 @@ import { ManiFest } from './ManiFest/ManiFest';
 import { RedSpeckledKidneyBeans } from './RedSpeckledKidneyBeans/RedSpeckledKidneyBeans';
 import { GrainBazar } from './GrainBazaar/GrainBazaar';
 import { Blogs, CommentDetailsDialog } from './Blogs/Blogs';
+import { Register } from './Register/Register'
+import { Login } from './Login/Login';
 
 export {
     HomePage,
@@ -23,5 +25,7 @@ export {
     GrainBazar,
     Blogs,
     CommentsDialog,
-    CommentDetailsDialog
+    CommentDetailsDialog,
+    Register,
+    Login,
 }

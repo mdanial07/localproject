@@ -1,0 +1,36 @@
+<div class="MainHeader">
+    <i class="fa fa-arrow-left" routerLink="/"></i>
+    <span>Register</span>
+</div>
+<div class="CenterDiv">
+    <div class="Body">
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="FIRST NAME" [(ngModel)]="firstname">
+            </mat-form-field>
+        </div>
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="LAST NAME" [(ngModel)]="lastname">
+            </mat-form-field>
+        </div>
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="EMAIL ADDRESS" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="PASSWORD" [(ngModel)]="password" type="password">
+            </mat-form-field>
+        </div>
+        <div class="LabelField">
+            <mat-form-field>
+                <input matInput placeholder="CONFIRM PASSWORD" [(ngModel)]="confirmpassword" type="password">
+            </mat-form-field>
+        </div>
+        <div class="Button">
+            <button mat-button (click)="Register()">Register</button>
+        </div>
+    </div>
+</div>

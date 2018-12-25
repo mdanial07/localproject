@@ -11,6 +11,8 @@ import {
   RedSpeckledKidneyBeans,
   GrainBazar,
   Blogs,
+  Register,
+  Login,
 } from './Component'
 
 const routes: Routes = [
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'blogs', component: Blogs },
     ]
   },
+  { path: 'login', component: Login },
+  { path: 'register', component: Register },
   { path: 'redspeckledkidneybeans', component: RedSpeckledKidneyBeans },
   { path: 'newpost', component: NewPost },
   { path: 'filter', component: Filter },
