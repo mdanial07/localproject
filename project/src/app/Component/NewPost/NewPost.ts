@@ -56,9 +56,12 @@ export class NewPost implements OnInit {
     ngOnDestroy(): void {
         this.abortRecording()
     }
+    first_name = ''; last_name = '';
     ngOnInit() {
         let user = JSON.parse(localStorage.getItem('UserData'));
         if (user) {
+            this.first_name = user.first_name
+            this.last_name = user.last_name
             this.id = user.id
             console.log(user.id)
         }

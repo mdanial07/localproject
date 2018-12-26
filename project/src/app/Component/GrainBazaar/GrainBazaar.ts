@@ -16,20 +16,20 @@ export class GrainBazar implements OnInit {
             name: 'DCP',
             full: 'Desi Chickpea'
         }, {
-            name: 'KCP',
-            full: 'Kabuli Chickpeas'
+            name: 'YP',
+            full: 'Yellow Peas'
         }, {
             name: 'Lentils',
             full: 'Red Lentils'
         }, {
-            name: 'YP',
-            full: 'Yellow Peas'
+            name: 'KCP',
+            full: 'Kabuli Chickpeas 62/64'
         }, {
             name: 'BMP SQ',
             full: 'Black Matpe SQ'
         }, {
-            name: 'YP',
-            full: 'Yellow Peas'
+            name: 'RSKB',
+            full: 'Red Speckled Kidney Bean'
         }, {
             name: 'KCP',
             full: 'Kabuli Chickpeas'
@@ -40,6 +40,27 @@ export class GrainBazar implements OnInit {
             console.log(res)
             this.Pricing = res['data']
             this.Pricing.map((res, i) => {
+                if (res['internationalVar'] < 0) {
+                    res['internationalColor'] = 'negative'
+                } else if (res['internationalVar'] > 0) {
+                    res['internationalColor'] = 'positive'
+                    res['internationalVar'] = '+' + res['internationalVar']
+                } else if (res['internationalVar'] == 0) {
+                    res['internationalColor'] = 'normal'
+                }
+                if (res['localVar'] < 0) {
+                    res['localColor'] = 'negative'
+                } else if (res['localVar'] > 0) {
+                    res['localColor'] = 'positive'
+                    res['localVar'] = '+' + res['localVar']
+                } else if (res['localVar'] == 0) {
+                    res['localColor'] = 'normal'
+                }
+                if (res.origin == 'Myanmar') {
+                    res['localPrice'] = res.localPrice + '/40'
+                } else {
+                    res['localPrice'] = res.localPrice + '/'
+                }
                 res['daalname'] = this.DaaArray[i]
                 this.PricingDetails.push()
             })

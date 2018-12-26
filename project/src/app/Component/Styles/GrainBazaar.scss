@@ -60,9 +60,8 @@
 .Packeges {
   margin: 5px;
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 4px 14px 0 rgba(0, 0, 0, 0.19);
-  margin: 10px;
-  margin-top: -45px;
-  margin-bottom: 85px;
+  margin: -45px 10px 85px;
+
   .MainTop {
     display: flex;
     flex-direction: row;
@@ -80,13 +79,14 @@
       justify-content: space-between;
       align-items: flex-start;
       // padding-right: 15px;
-      width: 32%;
+      width: 35%;
+
       .rskb {
         display: flex;
         flex-direction: column;
 
         .Heading {
-          font-size: 32px;
+          font-size: 28px;
           font-weight: bold;
           margin: 0;
         }
@@ -123,6 +123,8 @@
       justify-content: space-around;
       align-items: center;
       padding: 15px 0;
+      width: 65%;
+      text-align: center;
 
       .LocalInter {
         display: flex;
@@ -151,6 +153,12 @@
 
         .negative {
           color: red;
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .normal {
+          color: #484848;;
           font-size: 18px;
           font-weight: bold;
         }
